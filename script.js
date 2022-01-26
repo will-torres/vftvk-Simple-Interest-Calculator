@@ -1,22 +1,22 @@
 // Computes final calculations 
 function compute() {
-    var principal = document.getElementById("principal").value;
+    const principal = document.getElementById("principal").value;
 
 // Verification of positve result or alert is given
     if (principal < 1 || principal == "") {
-        alert("Enter a positive number");
+        alert("Please enter a positive number");
         document.getElementById("principal").focus();
         return false;
     }
-    var rate = document.getElementById("rate").value;
-    var years = document.getElementById("years").value;
-    var interest = principal * years * rate / 100;
-    var date = new Date();
-    var thisYear = date.getFullYear();
+    const rate = document.getElementById("rate").value;
+    const years = document.getElementById("years").value;
+    const interest = principal * years * rate / 100;
+    const date = new Date();
+    const thisYear = date.getFullYear();
 
 // Calculation results
-    var futureYear = thisYear + Number(years);
-    var result = document.getElementById("result");
+    const futureYear = thisYear + Number(years);
+    const result = document.getElementById("result");
     calcData = "If you deposit <mark>" + principal + "</mark>,<br>"
         + "at an interest rate of <mark>" + rate + `%` + "</mark>.<br>"
             + "You will receive an amount of <mark>" + interest + "</mark>,<br>"
@@ -26,8 +26,8 @@ function compute() {
 
 // Rate indicator 
 function update() {
-    var slider = document.getElementById("rate");
-    var calcData = document.getElementById("demo");
-    var percents = slider.value + "%";
+    const slider = document.getElementById("rate");
+    const calcData = document.getElementById("demo");
+    const percents = slider.value + "%";
     calcData.innerHTML = percents;
 }
